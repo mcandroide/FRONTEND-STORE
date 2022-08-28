@@ -1,0 +1,328 @@
+:root {
+
+    --primario: #9a19d6;
+    --primariooscuro: #680a80;
+    --secundario: #fad60c;
+    --secundariooscuro: rgb(250, 206, 8);
+    --blanco: #FFF;
+    --negro: #000;
+
+    --FuentePrincipal:'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/**globales **/
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem; 
+    line-height: 1.5; /**interlineado**/ 
+}
+p {
+    font-size: 1.8rem;  
+    font-family: Arial, Helvetica, sans-serif; 
+    color: var(--blanco)
+}
+a{ /**enlaces **/
+    text-decoration: none;
+    
+}
+img{
+    width: 100%;
+    
+}
+.contenedor{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1,h2,h3{
+    text-align:center;
+    color: var(--secundario);
+    font-family: var(--FuentePrincipal);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+/**Header**/
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.logo__nombre {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    color: var(--blanco);
+    padding: 0;
+    margin: 0;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+.logo__bold {
+    font-weight: bold;
+    color: var(--secundario);
+    justify-content: center;
+}
+
+/**Footer**/
+.footer {
+    background-color: var(--primariooscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    font-family: var(--FuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+/**Navegacion**/
+.navegacion {
+    background-color: var(--primariooscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    /*gap: 2rem; espacio entre palabras forma nueva **/
+}
+.navegacion__enlace{
+    font-family: var(--FuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    margin-right: left;  /*espacio entre palabras **/
+    padding: 1rem;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+color: var(--secundario)
+}
+
+
+/** Grid **/
+.grid {
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr)); /**dos de una fraccion **/
+    gap: 2rem;
+}
+
+@media (min-width : 768px) {
+    .grid {
+     grid-template-columns: repeat(3, 1fr);
+    }
+}
+ 
+/** Productos **/
+
+.productos {
+    background-color: var(--primariooscuro);
+    padding: 1rem;
+
+}
+.productos__nombre {
+    font-size: 4rem;
+}
+.productos__precio {
+    font-size: 2.8rem;
+    color: var(--secundario)
+}
+.productos__nombre,
+.productos__precio {
+    font-family: var(--FuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2; /*interlineado*/
+}   
+
+ /**Graficos**/
+ .grafico {
+    min-height: 30rem; /**altura minima**/
+    background-repeat: no-repeat;
+    background-size: cover;/**imagen ocupe todo el espacio**/
+    grid-column: 1 / 3;
+}
+.grafico--sharp {
+background-image: url(../img/devs.jpg);
+grid-row: 2 / 3;
+}
+.grafico--js {
+    background-image: url(../img/desarrollador-java.webp);
+}
+@media (min-width :768px) {
+    .grafico--js
+    {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/**Nosotros**/
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.nosotros__imagen {
+    grid-row: 1 / 2;
+}
+
+@media (min-width : 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3;
+        }
+}
+ /**BLOQUES**/
+ .bloques{
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+     gap: 2rem;
+ }
+@media (min-width :768px) {
+    .bloques {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+.bloque{
+    text-align: center;
+ }
+
+ .bloque__titulo{
+     margin: 0;
+ }
+
+
+ /**Pagina del producto**/
+ @media (min-width :768px) {
+  .camisa {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      column-gap: 2rem;
+  }
+ }
+ @media (min-width: 768px) {
+    .formulario{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.formulario__campo{
+    border:1rem solid var(--primariooscuro);/**ancho de borde, tipo de borde, color de border**/
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+   
+    /**appearance: none; quitar flechita**/
+ }
+
+.formulario__submit {
+    justify-content: center;
+    background-color: var(--secundario); /**color fonde**/
+    border: none; /**todos los inputs tienen un borde**/
+    font-size: 2rem; /**tamaño grande texto**/
+    font-family: var(--FuentePrincipal); /**aplicamos la fuente**/
+    padding: 2rem;
+    transition: backround-color .3s ease;
+    grid-column: 1 / 3;
+    gap: 2rem;
+}
+
+
+.formulario__campo,
+.formulario__submit{
+    display: grid;
+    grid-template-columns: repeat(1,3fr);
+    margin-bottom: 1rem;
+}
+
+.formulario__submit:hover { /**manita**/
+    cursor: pointer; /**efecto**/
+    background-color: var(--secundariooscuro);
+}
+
+
+/*--primario: #9a19d6;
+--primariooscuro: #680a80;
+--secundario: #fad60c;
+--secundariooscuro: rgb(47,171,0);
+--blanco: #FFF;
+--negro: #000;*/
+
+
+.tabla{
+    background-color: var(--primariooscuro);
+    padding: 2rem;
+}
+
+.input{
+    width: 100%;
+    padding: 1rem;
+}
+
+.llave{
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+}
+
+.letras{
+    font-size: 2rem;
+    text-align: center;
+    font-family: var(--FuentePrincipal);
+    color: var(--blanco);
+}
+
+.login{
+    font-family: var(--FuentePrincipal);
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: .1rem;
+    color: var(--secundario);
+}
+
+.loginBoton{
+    padding: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+.subli{
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+    .tabla {
+        text-align: center;
+        gap: 2rem;
+        width: 100%;
+        height: 100%;
+    }
+    .llave{
+        border-bottom: solid var(--secundario);   
+    }
+}
